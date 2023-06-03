@@ -1,0 +1,31 @@
+#!/bin/bash
+gcc -o proj2E project2E.c
+if [[ $? != 0 ]] ; then
+   echo "Cannot compile your program"
+   echo "Failed"
+   exit 1
+fi
+
+if [[ ! -f 2E_statement.txt ]] ; then
+   echo "Cannot find file 2E_statement.txt"
+   echo "Failed"
+   exit 1
+fi
+
+if [[ ! -f 2E_correct_output ]] ; then
+   echo "Cannot find file 2E_correct_output"
+   echo "Failed"
+   exit 1
+fi
+
+
+./proj2E 2E_statement.txt is this first This > your_output
+diff your_output 2E_correct_output
+if [[ $? == 0 ]] ; then
+   echo "Your output matched the correct output.  Success!!"
+   exit 0
+else
+   echo "Your output did not match the correct output.  Failed"
+   exit 1
+fi
+ 

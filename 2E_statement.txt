@@ -1,0 +1,24 @@
+Hi Everyone,
+
+This is a hard project, but I am hoping that it will help your C coding skills.
+I found it useful to use the strncmp and strlen functions, and you are welcome
+to do so.  My first iteration of the solution didn't work right --- when looking
+for the word is, I incorrectly matched it to this.  So I had to modify my
+solution to look at the character before a word as well.  Worse, I had to
+add logic to not look at the character before a word for the very first 
+character.  So this project ended up being a little trickier than I first
+thought it would be.
+
+I did find it useful to write a function like this
+int SearchForWord(char *txt, int remaining, char *searchWord, int firstChar)
+
+firstChar was only true when txt was pointing at the first character.  In that
+case, I didn't look at txt[-1].  Otherwise, I did, and compared txt[-1] to
+comma, space, period, and newline.
+
+Also, note that a future project will be to run this project and prove that
+it is free of memory errors.
+
+Best,
+Hank
+
